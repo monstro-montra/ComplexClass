@@ -4,25 +4,28 @@ def main():
     # x is first complex number
     # y is second complex number
 
+    print("Hello! We are going to do some calculations with Complex numbers." )
+
     x_real, x_imaginary = read_input()  # store values for x set of complex numbers
     y_real, y_imaginary = read_input()  # store values for y set of complex numbers
 
     x = complex(x_real, x_imaginary)
     y = complex(y_real, y_imaginary)
 
-    print(x + y)
-    print(x - y)
-    print(x * y)
-    print(x / y)
-    print("{:.2f} + 0.00i".format(x.modulus()))
-    print("{:.2f} + 0.00i".format(y.modulus()))
+    print(f"({x}) + ({y}) = ", x + y)
+    print(f"({x}) - ({y}) = ", x - y)
+    print(f"({x}) * ({y}) = ", x * y)
+    print(f"({x}) / ({y}) = ", x / y)
+    print(f"({x}) Modulus: ", "{:.2f} + 0.00i".format(x.modulus()))
+    print(f"{y} Modulus: ", "{:.2f} + 0.00i".format(y.modulus()))
 
 
 def read_input():
     while True:
         try:
-            real = float(input("Enter a number: "))
-            imaginary = float(input("Enter a second number: "))
+            real = float(input("Enter the real number: "))
+            imaginary = float(input("Enter the imaginary number (without the i): "))
+            print()  # make an empty line
 
             if real is None or imaginary is None:  # check to see if either of the values are 0.
                 raise ValueError
